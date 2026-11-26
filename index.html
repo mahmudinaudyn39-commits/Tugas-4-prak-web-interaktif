@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List dengan Progress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="halaman">
+    <header>
+      <h1>Daftar Kegiatan</h1>
+      <p id="tanggalHariIni" class="tanggal"></p>
+    </header>
+
+    <!-- Ringkasan: progress keseluruhan dan statistik -->
+    <section class="panel-ringkasan">
+      <div class="baris-label">
+        <span>Progress keseluruhan</span>
+        <strong id="persenTotal">0%</strong>
+      </div>
+      <div class="bar"><div id="barTotal" class="bar-isi"></div></div>
+
+      <div class="statistik">
+        <div><strong id="statTotal">0</strong><span>Total tugas</span></div>
+        <div><strong id="statBerjalan">0</strong><span>Sedang berjalan</span></div>
+        <div><strong id="statSelesai">0</strong><span>Selesai</span></div>
+        <div><strong id="statTerlambat">0</strong><span>Terlambat</span></div>
+      </div>
+    </section>
+
+    <!-- Form tambah tugas -->
+    <section class="form-tambah">
+      <h2>Tambah tugas</h2>
+      <div class="grid-form">
+        <label class="penuh">Nama tugas
+          <input type="text" id="inputNama" placeholder="Contoh: Laporan praktikum" autocomplete="off">
+        </label>
+        <label class="penuh">Rincian tugas
+          <textarea id="inputRincian" rows="2" placeholder="Jelaskan apa yang harus dikerjakan (boleh kosong)"></textarea>
+        </label>
+        <label>Jenis tugas
+          <select id="pilihKategori">
+            <option value="harian">Harian</option>
+            <option value="bulanan">Bulanan</option>
+            <option value="tahunan">Tahunan</option>
+          </select>
+        </label>
+        <label>Deadline
+          <input type="date" id="inputDeadline">
+        </label>
+      </div>
+      <p id="pesanError" class="pesan-error"></p>
+      <button id="tombolTambah">Tambah tugas</button>
+    </section>
+
+    <!-- Tiga daftar tugas (isinya dibuat oleh JavaScript) -->
+    <section>
+      <h2>Harian</h2>
+      <ul id="daftar-harian"></ul>
+    </section>
+
+    <section>
+      <h2>Bulanan</h2>
+      <ul id="daftar-bulanan"></ul>
+    </section>
+
+    <section>
+      <h2>Tahunan</h2>
+      <ul id="daftar-tahunan"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
